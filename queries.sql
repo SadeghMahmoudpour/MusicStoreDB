@@ -28,7 +28,7 @@ SELECT C.customer
 FROM Customers AS C
 WHERE  NOT exists(
   SELECT T.t_id AS t_id
-  FROM Tracks AS T
+  FROM Suggests AS T
   WHERE NOT exists(
     SELECT *
     FROM Suggests AS S1
@@ -91,3 +91,22 @@ END;
  FROM t AS t1 , t AS t2
  (SELECT c_id, t_id
  FROM Orders NATURAL JOIN Track_Order) AS t;
+
+SELECT *
+FROM Track_Singer NATURAL JOIN Tracks NATURAL JOIN Singers NATURAL JOIN Track_Genre NATURAL JOIN Genres;
+
+SELECT singer
+FROM Singers AS S1
+WHERE S1.s_id NOT IN(
+  SELECT s_id
+  FROM Track_Singer AS TS1 NATURAL JOIN (
+    SELECT t_id, count(DISTINCT s_id) AS sNum
+    FROM Track_Singer AS TS2 NATURAL JOIN Track_Genre AS TG2 NATURAL JOIN Genres
+    WHERE genre = "Rock"
+    GROUP BY t_id
+  )AS T1
+  WHERE sNum > 1
+);
+
+SELECT *
+FROM Suggests NATURAL JOIN Tracks NATURAL JOIN Customers;

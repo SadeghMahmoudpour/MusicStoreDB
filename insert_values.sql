@@ -16,6 +16,7 @@ INSERT INTO Singers VALUES (2, "Evanescense");
 INSERT INTO Singers VALUES (3, "Sandi");
 INSERT INTO Singers VALUES (4, "Changiz");
 INSERT INTO Singers VALUES (5, "Aghasi");
+INSERT INTO Singers VALUES (6, "Akhari");
 
 INSERT INTO Track_Singer VALUES (1, 1, 1);
 INSERT INTO Track_Singer VALUES (2, 2, 2);
@@ -35,12 +36,14 @@ INSERT INTO Track_Genre VALUES (2, 2, 2);
 INSERT INTO Track_Genre VALUES (3, 3, 2);
 INSERT INTO Track_Genre VALUES (4, 4, 2);
 INSERT INTO Track_Genre VALUES (5, 5, 1);
+INSERT INTO Track_Genre VALUES (6, 6, 1);
 
 INSERT INTO Customers VALUES (1, "Ansar");
 INSERT INTO Customers VALUES (2, "Pashmak");
 INSERT INTO Customers VALUES (3, "Kord");
 INSERT INTO Customers VALUES (4, "Sadegh");
 INSERT INTO Customers VALUES (5, "Big");
+INSERT INTO Customers VALUES (6, "cust");
 
 INSERT INTO Orders VALUES (1, 1);
 INSERT INTO Orders VALUES (2, 3);
@@ -59,3 +62,9 @@ INSERT INTO Suggests VALUES (5, 3, 1, "nostalgic", 8);
 INSERT INTO Suggests VALUES (6, 2, 2, "Good", 6);
 INSERT INTO Suggests VALUES (7, 4, 2, "bad", 1);
 INSERT INTO Suggests VALUES (8, 5, 2, "great", 10);
+INSERT INTO Suggests VALUES (9, 2, 3, "aaalliii", 10);
+INSERT INTO Suggests VALUES (10, 4, 6, "20", 10);
+INSERT INTO Suggests VALUES (11, 5, 6, "21", 10);
+INSERT INTO Suggests VALUES (12, 2, 6, "22", 10);
+
+DESC Suggests;
